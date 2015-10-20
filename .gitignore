@@ -1,0 +1,9 @@
+/target
+
+/src/main/webapp/static/node_modules
+
+/.settings
+/.project
+/.classpath
+/financing.iml
+/.idea
