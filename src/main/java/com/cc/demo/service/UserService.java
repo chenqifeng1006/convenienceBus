@@ -12,5 +12,4 @@ public interface UserService {
 
     UserDto getUserById(long id);
 
-    void transactionalTest(long id);
 }

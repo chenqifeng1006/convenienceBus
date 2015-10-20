@@ -2,16 +2,16 @@ package com.cc.demo.dto;
 
 public class UserDto {
 	
-	private Long userId;
+	private Long id;
 
     private String username;
 
-	public Long getUserId() {
-		return userId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(Long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
