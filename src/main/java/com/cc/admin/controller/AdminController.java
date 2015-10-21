@@ -46,7 +46,7 @@ public class AdminController /*extends BaseController*/ {
 		admin.setPassword("333333333");
 		admin.setRegisterTime(new Date());
 		admin.setUsername("chenqifeng");
-		admin.setRole("123123");
+		admin.setRole("commonAdmin");
 		this.adminService.add(admin);
 		return new JsonData(admin);
 	}
