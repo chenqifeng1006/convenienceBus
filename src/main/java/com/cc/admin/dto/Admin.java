@@ -1,8 +1,8 @@
-package com.cc.user.entity;
+package com.cc.admin.dto;
 
 import java.util.Date;
 
-public class User {
+public class Admin {
 	
 	private Long id;
 	
@@ -16,7 +16,7 @@ public class User {
 	
 	private String role;
 	
-	private String IDCard;
+	private String card;
 
 	public Long getId() {
 		return id;
@@ -66,11 +66,13 @@ public class User {
 		this.role = role;
 	}
 
-	public String getIDCard() {
-		return IDCard;
+	public String getCard() {
+		return card;
 	}
 
-	public void setIDCard(String iDCard) {
-		IDCard = iDCard;
+	public void setCard(String card) {
+		this.card = card;
 	}
+
+	
 }

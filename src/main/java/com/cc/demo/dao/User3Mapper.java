@@ -12,7 +12,7 @@ import java.util.List;
  * @author 
  * @date 2014-10-09 11:07:30
  */
-public interface UserMapper {
+public interface User3Mapper {
 
 	/**
 	 * @Title: getById

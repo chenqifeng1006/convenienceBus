@@ -1,6 +1,6 @@
 package com.cc.demo.service.impl;
 import org.springframework.stereotype.Service;
-import com.cc.demo.dao.UserMapper;
+import com.cc.demo.dao.User3Mapper;
 import com.cc.demo.dto.UserDto;
 import com.cc.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.util.List;
 @Transactional
 public class UserServiceImpl  implements UserService{
     @Autowired
-    private UserMapper userMapper;
+    private User3Mapper userMapper;
 
     public List<UserDto> queryUsers(){
         return userMapper.queryUsers();
