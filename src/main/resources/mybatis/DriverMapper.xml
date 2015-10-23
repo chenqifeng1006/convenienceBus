@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cc.driver.dao.DriverMapper">
+    <resultMap type="Driver" id="DriverMap">
+        <id column="id" property="id" />
+        <result column="user_name" property="username"/>
+        <result column="cell_phone" property="cellPhone"/>
+        <result column="register_time" property="registerTime"/>
+        <result column="vehicle_license" property="vehicleLicense"/>
+    </resultMap>
+
+    <select id="query" resultMap="DriverMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		driver 
+    </select>
+    
+    <select id="getById" resultMap="DriverMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		driver  
+   		WHERE id = #{id}
+    </select>
+    
+    <insert id="add" parameterType="com.cc.driver.dto.Driver" useGeneratedKeys="true" keyProperty="id">
+    	INSERT INTO 
+        	driver 
+        	(cell_phone,user_name,password,register_time,card,vehicle_license,amount)
+        VALUES 
+        	(#{cellPhone},#{username},#{password},#{registerTime},#{card},#{vehicleLicense},#{amount})
+    </insert>
+    
+    <update id="edit" parameterType="com.cc.driver.dto.Driver">
+    	UPDATE 
+        	driver 
+        SET 
+            cell_phone=#{cellPhone},
+            user_name=#{username},
+            password=#{password},
+            card=#{card},
+            vehicle_license=#{vehicleLicense},
+            amount=#{amount}
+        WHERE 
+        	id=#{id}
+    </update>
+
+	<delete id="delete">
+		DELETE
+    	FROM
+    		driver
+    	WHERE
+    		id=#{id}
+	</delete>
+
+</mapper>
