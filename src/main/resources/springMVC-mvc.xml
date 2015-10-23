@@ -22,6 +22,5 @@
 	<mvc:annotation-driven />
 
 	<mvc:resources mapping="/demo/**" location="/demo/**" />
-	<mvc:resources mapping="/**" location="/static/**" />
-
+	<mvc:resources mapping="/**" location="/**" />
 </beans>  
