@@ -18,7 +18,19 @@ public class AdminService {
 		return this.adminMapper.query("");
 	}
 	
+	public Admin getById(Long id){
+		return this.adminMapper.getById(id);
+	}
+	
 	public void add(Admin admin){
 		this.adminMapper.add(admin);
+	}
+	
+	public void edit(Admin admin){
+		this.adminMapper.edit(admin);
+	}
+	
+	public void delete(Long id){
+		this.adminMapper.delete(id);
 	}
 }

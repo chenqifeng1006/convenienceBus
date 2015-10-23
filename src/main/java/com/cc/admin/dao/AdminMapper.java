@@ -6,9 +6,11 @@ import com.cc.admin.dto.Admin;
 
 public interface AdminMapper {
 	
-	public Long add(Admin user);
+	public Long add(Admin admin);
 	
-	public void update(Admin user);
+	public void edit(Admin admin);
+	
+	public void delete(Long id);
 	
 	public Admin getById(Long id);
 	

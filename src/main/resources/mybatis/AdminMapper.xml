@@ -8,21 +8,48 @@
         <result column="register_time" property="registerTime"/>
     </resultMap>
 
-    <select id="queryUsers" resultMap="AdminMap">
+    <select id="query" resultMap="AdminMap">
     	SELECT 
     		* 
     	FROM 
     		admin 
     </select>
     
-    <insert id="addUser" parameterType="com.cc.admin.dto.Admin" useGeneratedKeys="true" keyProperty="id">
+    <select id="getById" resultMap="AdminMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		admin 
+   		WHERE id = #{id}
+    </select>
+    
+    <insert id="add" parameterType="com.cc.admin.dto.Admin" useGeneratedKeys="true" keyProperty="id">
     	INSERT INTO 
         	admin 
         	(cell_phone,user_name,password,register_time,role,card)
         VALUES 
         	(#{cellPhone},#{username},#{password},#{registerTime},#{role},#{card})
     </insert>
+    
+    <update id="edit" parameterType="com.cc.admin.dto.Admin">
+    	UPDATE 
+        	admin 
+        SET 
+            cell_phone=#{cellPhone},
+            user_name=#{username},
+            password=#{password},
+            role=#{role},
+            card=#{card}
+        WHERE 
+        	id=#{id}
+    </update>
 
-	
+	<delete id="delete">
+		DELETE
+    	FROM
+    		admin
+    	WHERE
+    		id=#{id}
+	</delete>
 
 </mapper>
