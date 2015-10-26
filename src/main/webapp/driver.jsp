@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<script type="text/javascript" src="./js/libs/jquery.js"></script>
 </head>
 <body>
@@ -27,12 +29,11 @@ $(function(){
 		$.ajax({
 			type:'POST',
 			url:'driver/add',
-//			contentType:'application/json;charset=utf-8',
 			data:{
 				cellPhone:'186428384582',
 				card:'21021102',
 				password:'123456',
-				username:'陈其丰',
+				username:'陈其丰222',
 				vehicleLicense:'n9y83',
 				amount:'12.2'
 			},
@@ -51,7 +52,7 @@ $(function(){
 				cellPhone:'186428384582',
 				card:'21021102',
 				password:'123456',
-				username:'chenqf2',
+				username:'丛日红',
 				vehicleLicense:'n9y83',
 				amount:'12.88'
 			},

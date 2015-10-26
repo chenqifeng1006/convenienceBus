@@ -72,7 +72,7 @@ public class DriverController extends BaseController {
 	public JsonObject delete(@RequestParam(value = "id") Long id) throws Exception {
 		Driver driver = this.driverService.getById(id);
 		if(driver == null){
-			throw new Exception("管理员信息有误，请重试");
+			throw new Exception("班车信息有误，请重试");
 		}
 		this.driverService.delete(id);
 		return new JsonSuccess();
