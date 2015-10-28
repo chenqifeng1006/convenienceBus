@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cc.member.dao.MemberMapper">
+    <resultMap type="Member" id="MemberMap">
+        <id column="id" property="id" />
+        <result column="user_name" property="username"/>
+        <result column="cell_phone" property="cellPhone"/>
+        <result column="register_time" property="registerTime"/>
+    </resultMap>
+
+    <select id="query" resultMap="MemberMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		member 
+    </select>
+    
+    <select id="getById" resultMap="MemberMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		member  
+   		WHERE id = #{id}
+    </select>
+    
+    <select id="getByName" resultMap="MemberMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		member  
+   		WHERE user_name = #{username}
+    </select>
+    
+    <select id="getByPhone" resultMap="MemberMap">
+    	SELECT 
+    		* 
+    	FROM 
+    		member  
+   		WHERE cell_phone = #{cellphone}
+   		LIMIT 1
+    </select>
+    
+    <insert id="add" parameterType="com.cc.member.dto.Member" useGeneratedKeys="true" keyProperty="id">
+    	INSERT INTO 
+        	member 
+        	(cell_phone,user_name,password,register_time,card,amount)
+        VALUES 
+        	(#{cellPhone},#{username},#{password},#{registerTime},#{card},#{amount})
+    </insert>
+    
+    <update id="edit" parameterType="com.cc.member.dto.Member">
+    	UPDATE 
+        	member 
+        SET 
+            cell_phone=#{cellPhone},
+            user_name=#{username},
+            password=#{password},
+            card=#{card},
+            amount=#{amount}
+        WHERE 
+        	id=#{id}
+    </update>
+
+	<delete id="delete">
+		DELETE
+    	FROM
+    		member
+    	WHERE
+    		id=#{id}
+	</delete>
+
+</mapper>
